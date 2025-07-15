@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome</title>
+
+  <meta name="theme-color" content="#ffffff">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+  <link href="{% static 'assets/css/theme-rtl.min.css' %}" rel="stylesheet" id="style-rtl">
+  <link href="{% static 'assets/css/theme.min.css' %}" rel="stylesheet" id="style-default">
+  <link href="{% static 'assets/css/user-rtl.min.css' %}" rel="stylesheet" id="user-style-rtl">
+  <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet" id="user-style-default">
+
+  <script>
+    var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+    if (isRTL) {
+      document.getElementById('style-default').disabled = true;
+      document.getElementById('user-style-default').disabled = true;
+      document.querySelector('html').setAttribute('dir', 'rtl');
+    } else {
+      document.getElementById('style-rtl').disabled = true;
+      document.getElementById('user-style-rtl').disabled = true;
+    }
+  </script>
+</head>
+
+<body class="container py-5">
+
+<nav class="navbar navbar-expand-lg bg-light navbar-light mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Event Project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="{% url 'register' %}" class="btn btn-success">Register</a>
+        </li>
+        <li class="nav-item ms-2">
+          <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1 class="text-center mt-2">Welcome!</h1>
+
+
+
+</body>
+</html>

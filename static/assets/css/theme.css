@@ -7141,7 +7141,7 @@ fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary,
   float: left;
   padding-right: 0.5rem;
   color: #748194;
-  content: var(--falcon-breadcrumb-divider, "/") /* rtl: var(--falcon-breadcrumb-divider, "/") */;
+  content: var(--falcon-breadcrumb-divider, "/") /* rtl: var(--event-breadcrumb-divider, "/") */;
 }
 .breadcrumb-item.active {
   color: #748194;
